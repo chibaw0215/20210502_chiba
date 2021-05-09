@@ -1,8 +1,8 @@
 <template>
   <div>
     <form action=""></form>
-    <input type="number" v-model="general" name="general"/>
-    <input type="submit" v-on:click="userClick" name="general"/>
+    <input type="number" v-model="general" />
+    <!-- <button v-on:click="userClick">送信</button> -->
 
     <p>adress:{{allAddress}}</p>
   </div>
@@ -20,22 +20,22 @@ export default {
       allAddress:""
     };
   },
-  methods: {
-    
-    userClick () {
+  
       
-
+   async created() {
     
-        const result =axios.get(
-        `/postcodes/{this.general}&apiKey=YCCtBxbm9ZWgsxv0T8e8py5QOUyFQYLabQ5UkI6
+    
+        const item = await axios.get(
+        `https://apis.postcode-jp.com/api/v4/postcodes/{this.general}?apiKey=YCCtBxbm9ZWgsxv0T8e8py5QOUyFQYLabQ5UkI6
 `
     );
-    return console.log(result);
+    const address = item.data;
+    this.allAddress=address.allAddress;
     
-    
-      }
+   }
+     
   
-  }
+  
   
 
 
