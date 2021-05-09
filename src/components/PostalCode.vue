@@ -23,7 +23,7 @@ export default {
     
     userClick () {
       const item =axios.get(
-      `https://apis.postcode-jp.com/api/v4/postcode/postcode/postcode=${this.general}&allAddress=""apiKey=YCCtBxbm9ZWgsxv0T8e8py5QOUyFQYLabQ5UkI6
+      `https://apis.postcode-jp.com/api/v4/postcodes/postcode/postcode=${this.general}&apiKey=YCCtBxbm9ZWgsxv0T8e8py5QOUyFQYLabQ5UkI6
 `
     );
     
