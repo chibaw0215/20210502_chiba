@@ -15,25 +15,30 @@ export default {
 
   data() {
     return {
-      general:""
-
+      general:"",
+      
+      allAddress:""
     };
   },
   methods: {
     
     userClick () {
-      const item =axios.get(
-      `https://apis.postcode-jp.com/api/v4/postcodes/postcode/postcode=${this.general}&apiKey=YCCtBxbm9ZWgsxv0T8e8py5QOUyFQYLabQ5UkI6
+      
+
+    
+        const result =axios.get(
+        `/postcodes/{this.general}&apiKey=YCCtBxbm9ZWgsxv0T8e8py5QOUyFQYLabQ5UkI6
 `
     );
+    return console.log(result);
     
-    const address =item.data;
-    this.allAddress=address.allAddress;
-
-    }
+    
+      }
+  
   }
   
-  
+
+
 };
 </script>
 
@@ -41,4 +46,3 @@ export default {
 <style scoped>
 
 </style>
-
